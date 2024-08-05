@@ -1,4 +1,9 @@
 ﻿using Radore_OOP.Classes;
+using Radore_OOP.Constructors;
+using Radore_OOP.Constructors2;
+using Radore_OOP.Solid.iyi;
+using Radore_OOP.Solid.kotu;
+using System.Collections;
 
 Console.WriteLine("Hello, World!");
 
@@ -126,3 +131,175 @@ Console.WriteLine("Bölüm: " + m.bol(54, 6));
 //        hücumsırasındaöneyaklaş();
 //        }
 //    }
+
+GenelMudur gm = new GenelMudur();
+Mudur mu = new Mudur();
+Programci p = new Programci();
+Stajyer s = new Stajyer();
+
+double toplamMaas = 0;
+toplamMaas += gm.maasinizNedir();
+toplamMaas += mu.maasinizNedir();
+toplamMaas += p.maasinizNedir();
+toplamMaas += s.maasinizNedir();
+Console.WriteLine("Toplam Maaş: " + toplamMaas + " TL maaş alıyorlar.");
+
+//---soru5 ödev
+//interface için
+// bmw mercedes 			porche
+//bmw havada uçuyor		mercedes havada uçuyor 		porsche çok hızlı gidiyor
+//bmw denizde yüzüyor		mercedes denizde yüzüyor	
+//bmw çok hızlı gidiyor
+
+
+// bu mesajları interface yada interface leri kullanarak ekrana nasıl yazdırırdınız.
+
+//Soru 6 ödev
+
+//abstract class
+
+// bmw 60.0 Litre mercedes 70.0 litre		porche 80.0 litre
+
+// toplamda ne kadar benzin harcıyorlar. 
+
+
+// https://dogan-ay.medium.com/design-patterns-tasar%C4%B1m-kal%C4%B1plar%C4%B1-nedir-2d0e3d44874
+// https://www.digitalocean.com/community/tutorials/java-singleton-design-pattern-best-practices-examples
+// https://www.gokhan-gokalp.com/en/stack-heap-kavramlari/
+
+Insan i2 = new Insan("hakan","yilmaz");
+Insan i3 = new Insan("metin","yildiz",44,3.14,true);
+
+// https://medium.com/@mstfkrky011/javada-s%C4%B1n%C4%B1flar-aras%C4%B1-i%CC%87li%C5%9Fkiler-fa7f69885e26
+// https://medium.com/@bbusrayildizz34/s%C4%B1n%C4%B1flar-aras%C4%B1-i%CC%87li%C5%9Fkiler-composition-aggregation-association-inheritance-5d1639bd9a4
+
+
+Goz goz = new Goz("Kahverengi","retina","30","30");
+Kulak kulak = new Kulak("Geniş");
+Burun burun = new Burun("Kemerli");
+Kafa kafa = new Kafa(goz,kulak,burun);
+YeniInsan yeniInsan = new YeniInsan("İbrahim","Gökyar",kafa);
+yeniInsan.randevuKayit();
+
+
+//public Araba(string marka, string model, int kapisayisi, int penceresayisi, int fiyat)
+//{
+//    this.marka = marka;
+//    this.model = model;
+//    this.kapisayisi = kapisayisi;
+//    this.penceresayisi = penceresayisi;
+//    this.fiyat = fiyat;
+//}
+Araba araba = new Araba("BMW","X5",4,4, 2000000);
+Console.WriteLine($"Arabanın markası: {araba.marka} modeli: {araba.model} kapı sayısı: {araba.kapisayisi} pencere sayısı: {araba.penceresayisi} fiyatı: {araba.fiyat} TL");
+
+YeniAraba yeniAraba = new YeniAraba
+(
+    new Kasa
+    (
+        new Marka("Mercedes"),new Model("C180"),new Kapi(4),new Pencere(4),"Sedan"
+    )
+    ,2000000
+);
+
+yeniAraba.SiparisVer();
+
+
+//diziler
+//1.yöntem
+string[] gunler = new string[7];
+gunler[0] = "Pazartesi";
+gunler[1] = "Salı";
+gunler[2] = "Çarşamba";
+gunler[3] = "Perşembe";
+gunler[4] = "Cuma";
+gunler[5] = "Cumartesi";
+gunler[6] = "Pazar";
+
+for (int ii = 0; ii < gunler.Length; ii++)
+{
+    Console.WriteLine(gunler[ii]);
+}
+
+//2.yöntem
+//burada dizi büyüklükleri tanımlı jste değişken nasıl oluyor
+
+int[] sayilar = { 2, 4, 6, 7, 9, 11, 22, 33, 44, 55, 66 };
+int toplam = 0;
+for (int ii = 0; ii < sayilar.Length; ii++)
+{
+    toplam+=sayilar[ii];
+}
+Console.WriteLine("Sayıların toplamı: " + toplam);
+
+
+//içinde çalışan tipinde veri alan bir dizimiz olsun ve tüm çalışanların toplam ne kadar maaş aldıklarını ekrana yazdıralım.
+Calisan[] calisanlar = { gm, mu, p, s };
+toplamMaas = 0;
+foreach (Calisan calisan in calisanlar)
+{
+    toplamMaas += calisan.maasinizNedir();
+}
+Console.WriteLine("Toplam Maaş: " + toplamMaas + " TL maaş alıyorlar.");
+
+//  peki xml in json a göre avantajları dezavantajları nedir
+
+
+// https://www.mshowto.org/java-collection-framework-nedir-framework-bilesenleri-ne-ise-yarar-peki-amaci.html
+ArrayList liste = new ArrayList();
+liste.Add("ibrahim");
+liste.Add(35);
+liste.Add(true);
+liste.Insert(0, "i");
+
+if(liste.Contains("ibrahim"))
+{
+    Console.WriteLine("Listede ibrahim var");
+}
+else
+{
+
+   Console.WriteLine("Listede ibrahim yok");
+}
+//generic class lar boxing ve unboxing işlemlerin performans kaybını da engeller
+// List<T> 
+List<string> liste2 = new List<string>();
+liste2.Add("ibrahim");
+liste2.Add("gökyar");
+
+// içine personel tipinde veri alan bir liste olsun bu listenin içine 3 tane personel ekleyelim ve tüm personellerin adını soyadını maaşını ve toplam ne kadar maaş aldıklarını ekrana yazdıralım.
+
+
+
+List<Personel> personeller = new List<Personel>();
+personeller.Add(new Personel("metin", "yıldız", 30000));
+personeller.Add(new Personel("hakan", "yılmaz", 50000));
+personeller.Add(new Personel("mehmet", "yıldız", 70000));
+toplamMaas = 0;
+
+foreach (Personel personel in personeller)
+{
+    Console.WriteLine($"Personel adı: {personel.adi} soyadı: {personel.soyadi} maaşı: {personel.maas}");
+    toplamMaas += personel.maas;
+}
+
+Console.WriteLine("Toplam Maaş: " + toplamMaas + " TL maaş alıyorlar.");
+
+DbLog dbLog = new DbLog();
+XmlLog xmlLog = new XmlLog();
+JsonLog jsonLog = new JsonLog();
+Logger logger = new Logger(dbLog,xmlLog,jsonLog);
+logger.LogKaydet(LogType.Xml, "303 nolu hata kodu oluştu");
+logger.LogKaydet(LogType.Db, "303 nolu hata kodu oluştu");
+logger.LogKaydet(LogType.Json, "303 nolu hata kodu oluştu");
+
+//https://gokhana.medium.com/solid-nedir-solid-yaz%C4%B1l%C4%B1m-prensipleri-nelerdir-40fb9450408e
+
+// Yeni bir log sistemini logger classını hiçbir şekilde değiştirmeden yeni bir log formatını sisteme ekleyelim.
+
+LoggerService logdb = new LoggerService(new DbLogger());
+LoggerService logxml = new LoggerService(new XmlLogger());
+LoggerService logjson = new LoggerService(new JsonLogger());
+logdb.Log("303 nolu hata kodu oluştu");
+logxml.Log("303 nolu hata kodu oluştu");
+logjson.Log("303 nolu hata kodu oluştu");
