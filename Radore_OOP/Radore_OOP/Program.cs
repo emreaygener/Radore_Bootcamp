@@ -2,9 +2,11 @@
 using Radore_OOP.Constructors;
 using Radore_OOP.Constructors2;
 using Radore_OOP.Overrides;
+using Radore_OOP.Reflections;
 using Radore_OOP.Solid.iyi;
 using Radore_OOP.Solid.kotu;
 using System.Collections;
+using System.Reflection;
 
 Console.WriteLine("Hello, World!");
 
@@ -307,3 +309,21 @@ logjson.Log("303 nolu hata kodu oluştu");
 
 Child c = new Child();
 c.yaz();
+
+Type t = typeof(MyClass);
+
+MethodInfo[] mi = t.GetMethods();
+Console.WriteLine("Nesnesin adı : " + t.Name);
+foreach (MethodInfo info in mi)
+{
+    ParameterInfo[] pi = info.GetParameters();
+    Console.WriteLine("Metod Adı :" + info.Name + " Dönüş Tipi : " + info.ReturnType);
+    if (pi.Length > 0)
+    {
+        Console.WriteLine("Parametre var ");
+    }
+    for (int iX = 0; iX < pi.Length; iX++)
+    {
+        Console.WriteLine(iX + 1 + ".paramatre : Dönüş Değeri : " + pi[iX].ParameterType.Name + " Adı : " + pi[iX].Name);
+    }
+}

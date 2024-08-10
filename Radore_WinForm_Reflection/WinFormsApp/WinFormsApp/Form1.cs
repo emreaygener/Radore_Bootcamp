@@ -1,10 +1,17 @@
-﻿namespace WinFormsApp
+﻿using System.Data.SqlClient;
+
+namespace WinFormsApp
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -15,8 +22,6 @@
         private void button1_Click(object sender, EventArgs e)
         {
             
-            string secilenOdemeTipi = cmbOdemeTipi.SelectedItem.ToString();
-            double tutar = Convert.ToDouble(txtTutar.Text);
             //OdemeIslemi odemeIslemi;
             //string mesaj;
             //if (secilenOdemeTipi == "KrediKarti")
@@ -43,17 +48,37 @@
             //}
 
             // Factory Design Pattern ve Reflection kullanarak çözülecek
-
-            try
+            if(cmbOdemeTipi.SelectedItem == null || cmbOdemeTipi.SelectedItem.ToString() == "Seciniz")
             {
-                OdemeIslemi odemeIslemi = new(OdemeFactory.GetOdemeTipi(secilenOdemeTipi));
-                lblSonuc.Text = odemeIslemi.OdemeYap(tutar);
-            }
-            catch (Exception ex)
+                MessageBox.Show("Ödeme tipi seçiniz");
+                return;
+            } 
+            else if(string.IsNullOrEmpty(txtTutar.Text))
             {
-                lblSonuc.Text = "Geçersiz ödeme tipi seçildi";
+                MessageBox.Show("Tutar giriniz");
+                return;
+            }
+            else
+            {
+                var secilenOdemeTipi = cmbOdemeTipi.SelectedItem.ToString();
+            
+                double tutar = Convert.ToDouble(txtTutar.Text);
+            
+                var factory = new OdemeFactory();
+                
+                var odemeIslemi = factory.NesneOlustur(secilenOdemeTipi);
+
+                lblSonuc.Text = odemeIslemi.ode(tutar);
+
             }
 
+            // https://ttdijitaldepokurumsal.turktelekom.com.tr/app/tr-TR/Dosya/Paylas/TT/209ecb53-4011-426b-881f-78da2a5cfb51
+
+            // ödeme yönteminin benzeri gerçekleştirilecek console application ı görselleştireceğiz ödeme yönteminin jhemen hemen aynı ikinci bir form
+
+            // log tipi dropdown
+            // durum 303 nolu hata kodu oluştu
+            // 303 nolu hata kodu oluştu dbye kaydedildi
         }
 
         private void label2_Click_1(object sender, EventArgs e)
