@@ -8,7 +8,7 @@ namespace Radore_OOP.Classes
 {
     public class Cocuk : Insan
     {
-        public string sifat;
+        public string sifat = "";
         public void adSoyadSifatYaz(string adi, string soyadi, string sifat)
         {
             Console.WriteLine($"{adi} {soyadi} {sifat}");

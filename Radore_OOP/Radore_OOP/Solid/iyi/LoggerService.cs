@@ -10,7 +10,7 @@ namespace Radore_OOP.Solid.iyi
     {
 
         private readonly ILogger _logger;
-
+        //Constructorına ILogger tipinde bir parametre alır.
         public LoggerService(ILogger logger)
         {
             _logger = logger;

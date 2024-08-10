@@ -1,6 +1,7 @@
 ﻿using Radore_OOP.Classes;
 using Radore_OOP.Constructors;
 using Radore_OOP.Constructors2;
+using Radore_OOP.Overrides;
 using Radore_OOP.Solid.iyi;
 using Radore_OOP.Solid.kotu;
 using System.Collections;
@@ -303,3 +304,6 @@ LoggerService logjson = new LoggerService(new JsonLogger());
 logdb.Log("303 nolu hata kodu oluştu");
 logxml.Log("303 nolu hata kodu oluştu");
 logjson.Log("303 nolu hata kodu oluştu");
+
+Child c = new Child();
+c.yaz();

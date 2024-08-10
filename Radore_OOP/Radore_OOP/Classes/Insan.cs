@@ -10,7 +10,7 @@ namespace Radore_OOP.Classes
     {//başlangıç scope'u
         //access modifiers datatype variableName
         public string adi = "ibrahim123";//alfanümerik
-        public string soyadi=null;
+        public string soyadi ="";
         public int yas=0; // tam sayısal verileri saklamamızı sağlar
         public double maas=0.14; //ondalıklı sayısal verileri saklamamızı sağlar
         public bool cinsiyet=true; //true/false
