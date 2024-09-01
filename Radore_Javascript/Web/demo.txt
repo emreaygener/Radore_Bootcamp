@@ -1,0 +1,4 @@
+<h2>Veri Alindi!</h2>
+<p>Veriyi aldik, napalim?</p>
+Veri Alindi! 
+Veriyi aldik, napalim?

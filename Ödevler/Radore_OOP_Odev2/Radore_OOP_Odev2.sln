@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radore_OOP_Odev2", "Radore_OOP_Odev2\Radore_OOP_Odev2.csproj", "{AB800E60-3669-4237-B540-1B4C3BF4DCC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB800E60-3669-4237-B540-1B4C3BF4DCC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB800E60-3669-4237-B540-1B4C3BF4DCC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB800E60-3669-4237-B540-1B4C3BF4DCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB800E60-3669-4237-B540-1B4C3BF4DCC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0920AC3C-A350-4E2E-A4DD-435A14D61366}
+	EndGlobalSection
+EndGlobal

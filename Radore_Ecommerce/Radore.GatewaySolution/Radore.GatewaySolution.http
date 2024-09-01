@@ -1,0 +1,6 @@
+@Radore.GatewaySolution_HostAddress = http://localhost:5187
+
+GET {{Radore.GatewaySolution_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

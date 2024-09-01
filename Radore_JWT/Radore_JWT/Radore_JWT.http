@@ -1,0 +1,6 @@
+@Radore_JWT_HostAddress = http://localhost:5084
+
+GET {{Radore_JWT_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,6 @@
+@Radore.Services.ShoppingCartAPI_HostAddress = http://localhost:5156
+
+GET {{Radore.Services.ShoppingCartAPI_HostAddress}}/Cart/
+Accept: application/json
+
+###

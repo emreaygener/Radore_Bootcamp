@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radore_Attribute", "Radore_Attribute\Radore_Attribute.csproj", "{4D1C0D7A-9CC5-4A46-9B82-563293B6C1D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D1C0D7A-9CC5-4A46-9B82-563293B6C1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D1C0D7A-9CC5-4A46-9B82-563293B6C1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D1C0D7A-9CC5-4A46-9B82-563293B6C1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D1C0D7A-9CC5-4A46-9B82-563293B6C1D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA6AEBC7-E2EC-4BFE-8A9A-B2DD4F945021}
+	EndGlobalSection
+EndGlobal
